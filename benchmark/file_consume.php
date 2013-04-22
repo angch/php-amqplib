@@ -5,7 +5,7 @@
  */
 
 include(__DIR__ . '/config.php');
-use PhpAmqpLib\Connection\AMQPConnection;
+//use PhpAmqpLib\Connection\AMQPConnection;
 
 $exchange = 'file_exchange';
 $queue = 'file_queue';

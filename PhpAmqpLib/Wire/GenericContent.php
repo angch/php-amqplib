@@ -1,15 +1,16 @@
 <?php
 
-namespace PhpAmqpLib\Wire;
+/*namespace PhpAmqpLib\Wire;
 
 use PhpAmqpLib\Wire\AMQPReader;
 use PhpAmqpLib\Wire\AMQPWriter;
+*/
 
 /**
  * Abstract base class for AMQP content.  Subclasses should override
  * the PROPERTIES attribute.
  */
-abstract class GenericContent
+abstract class PhpAmqpLib_Wire_GenericContent
 {
     public $delivery_info = array();
     private $properties = array();
@@ -81,7 +82,7 @@ abstract class GenericContent
      */
     public function load_properties($raw_bytes)
     {
-        $r = new AMQPReader($raw_bytes);
+        $r = new PhpAmqpLib_Wire_AMQPReader($raw_bytes);
 
         // Read 16-bit shorts until we get one with a low bit set to zero
         $flags = array();
@@ -121,7 +122,7 @@ abstract class GenericContent
         $shift = 15;
         $flag_bits = 0;
         $flags = array();
-        $raw_bytes = new AMQPWriter();
+        $raw_bytes = new PhpAmqpLib_Wire_AMQPWriter();
 
         foreach ($this->prop_types as $key => $proptype) {
             if (isset($this->properties[$key])) {
@@ -147,7 +148,7 @@ abstract class GenericContent
         }
 
         $flags[] = $flag_bits;
-        $result = new AMQPWriter();
+        $result = new PhpAmqpLib_Wire_AMQPWriter();
         foreach ($flags as $flag_bits) {
             $result->write_short($flag_bits);
         }

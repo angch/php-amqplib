@@ -1,7 +1,7 @@
 <?php
 
-namespace PhpAmqpLib\Exception;
+//namespace PhpAmqpLib\Exception;
 
-class AMQPRuntimeException extends \RuntimeException implements AMQPExceptionInterface
+class AMQPRuntimeException extends \RuntimeException implements PhpAmqpLib_Exception_AMQPExceptionInterface
 {
 }

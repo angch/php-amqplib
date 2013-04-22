@@ -1,7 +1,7 @@
 <?php
 
 include(__DIR__ . '/config.php');
-use PhpAmqpLib\Connection\AMQPConnection;
+//use PhpAmqpLib\Connection\AMQPConnection;
 
 $exchange = 'router';
 $queue = 'haqueue';

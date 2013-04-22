@@ -113,10 +113,10 @@ class WireTest extends \PHPUnit_Framework_TestCase
 
     protected function writeAndRead($v, $write_method, $read_method)
     {
-        $w = new AMQPWriter();
+        $w = new PhpAmqpLib_Wire_AMQPWriter();
         $w->{$write_method}($v);
 
-        $r = new AMQPReader($w->getvalue());
+        $r = new PhpAmqpLib_Wire_AMQPReader($w->getvalue());
         $this->assertEquals($v, $r->{$read_method}());
     }
 }

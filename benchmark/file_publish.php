@@ -11,8 +11,8 @@
  */
 
 include(__DIR__ . '/config.php');
-use PhpAmqpLib\Connection\AMQPConnection;
-use PhpAmqpLib\Message\AMQPMessage;
+//use PhpAmqpLib\Connection\AMQPConnection;
+//use PhpAmqpLib\Message\AMQPMessage;
 
 //suboptimal function to generate random content
 function generate_random_content($bytes)

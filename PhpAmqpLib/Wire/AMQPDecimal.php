@@ -1,8 +1,8 @@
 <?php
 
-namespace PhpAmqpLib\Wire;
+//namespace PhpAmqpLib\Wire;
 
-use PhpAmqpLib\Exception\AMQPOutOfBoundsException;
+//use PhpAmqpLib\Exception\AMQPOutOfBoundsException;
 
 /**
  * AMQP protocol decimal value.
@@ -15,14 +15,14 @@ use PhpAmqpLib\Exception\AMQPOutOfBoundsException;
  * business values such as currency rates and amounts. The
  * 'decimals' octet is not signed.
  */
-class AMQPDecimal
+class PhpAmqpLib_Wire_AMQPDecimal
 {
     public function __construct($n, $e)
     {
         if($e < 0) {
-            throw new AMQPOutOfBoundsException("Decimal exponent value must be unsigned!");
+            throw new PhpAmqpLib_Exception_AMQPOutOfBoundsException("Decimal exponent value must be unsigned!");
         }
-        
+
         $this->n = $n;
         $this->e = $e;
     }

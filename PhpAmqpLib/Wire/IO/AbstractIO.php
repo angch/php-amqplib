@@ -1,8 +1,8 @@
 <?php
 
-namespace PhpAmqpLib\Wire\IO;
+//namespace PhpAmqpLib\Wire\IO;
 
-abstract class AbstractIO
+abstract class PhpAmqpLib_Wire_IO_AbstractIO
 {
     abstract public function read($n);
 

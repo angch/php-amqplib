@@ -1,5 +1,6 @@
 <?php
 
+/*
 namespace PhpAmqpLib\Wire;
 
 use PhpAmqpLib\Exception\AMQPTimeoutException;
@@ -7,14 +8,14 @@ use PhpAmqpLib\Wire\AMQPDecimal;
 use PhpAmqpLib\Exception\AMQPRuntimeException;
 use PhpAmqpLib\Exception\AMQPOutOfBoundsException;
 use PhpAmqpLib\Wire\IO\AbstractIO;
-
+*/
 
 /**
  * This class can read from a string or from a stream
  *
  * TODO : split this class: AMQPStreamReader and a AMQPBufferReader
  */
-class AMQPReader
+class PhpAmqpLib_Wire_AMQPReader
 {
     protected $str;
     protected $offset;
@@ -29,7 +30,7 @@ class AMQPReader
      * @param null   $sock
      * @param int    $timeout
      */
-    public function __construct($str, AbstractIO $io = null, $timeout = 0)
+    public function __construct($str, PhpAmqpLib_Wire_IO_AbstractIO $io = null, $timeout = 0)
     {
         if (!function_exists("bcmul")) {
             throw new AMQPRuntimeException("'bc math' module required");
@@ -252,7 +253,7 @@ class AMQPReader
         $slen = $this->read_php_int();
 
         if ($slen < 0) {
-            throw new AMQPOutOfBoundsException("Strings longer than supported on this platform");
+            throw new PhpAmqpLib_Exception_AMQPOutOfBoundsException("Strings longer than supported on this platform");
         }
 
         return $this->rawread($slen);
@@ -277,10 +278,10 @@ class AMQPReader
         $tlen = $this->read_php_int();
 
         if ($tlen<0) {
-            throw new AMQPOutOfBoundsException("Table is longer than supported");
+            throw new PhpAmqpLib_Exception_AMQPOutOfBoundsException("Table is longer than supported");
         }
 
-        $table_data = new AMQPReader($this->rawread($tlen), null);
+        $table_data = new PhpAmqpLib_Wire_AMQPReader($this->rawread($tlen), null);
         $result = array();
         while ($table_data->tell() < $tlen) {
             $name = $table_data->read_shortstr();
@@ -337,7 +338,7 @@ class AMQPReader
             case 'D': // Decimal
                 $e = $this->read_octet();
                 $n = $this->read_signed_long();
-                $val = new AMQPDecimal($n, $e);
+                $val = new PhpAmqpLib_Wire_AMQPDecimal($n, $e);
                 break;
             case 't':
                 $val = $this->read_octet();

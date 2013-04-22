@@ -1,13 +1,13 @@
 <?php
 
-namespace PhpAmqpLib\Tests\Functional;
+//namespace PhpAmqpLib\Tests\Functional;
 
-use PhpAmqpLib\Connection\AMQPStreamConnection;
+//use PhpAmqpLib\Connection\AMQPStreamConnection;
 
-class StreamPublishConsumeTest extends AbstractPublishConsumeTest
+class StreamPublishConsumeTest extends PhpAmqpLib_Tests_Functional_AbstractPublishConsumeTest
 {
     protected function createConnection()
     {
-        return new AMQPStreamConnection(HOST, PORT, USER, PASS, VHOST);
+        return new PhpAmqpLib_Connection_AMQPStreamConnection(HOST, PORT, USER, PASS, VHOST);
     }
 }

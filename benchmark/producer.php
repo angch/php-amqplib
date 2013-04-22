@@ -8,8 +8,8 @@
 
 include(__DIR__ . '/config.php');
 
-use PhpAmqpLib\Connection\AMQPConnection;
-use PhpAmqpLib\Message\AMQPMessage;
+//use PhpAmqpLib\Connection\AMQPConnection;
+//use PhpAmqpLib\Message\AMQPMessage;
 
 $exchange = 'bench_exchange';
 $queue = 'bench_queue';

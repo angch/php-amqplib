@@ -1,10 +1,10 @@
 <?php
 
-namespace PhpAmqpLib\Tests\Functional;
+//namespace PhpAmqpLib\Tests\Functional;
 
-use PhpAmqpLib\Connection\AMQPSocketConnection;
+//use PhpAmqpLib\Connection\AMQPSocketConnection;
 
-class SocketPublishConsumeTest extends AbstractPublishConsumeTest
+class SocketPublishConsumeTest extends PhpAmqpLib_Tests_Functional_AbstractPublishConsumeTest
 {
     protected function createConnection()
     {

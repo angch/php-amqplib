@@ -4,13 +4,13 @@ namespace PhpAmqpLib\Tests\Unit;
 
 use PhpAmqpLib\Wire\AMQPWriter;
 
-class AMQPWriterTest extends \PHPUnit_Framework_TestCase
+class PhpAmqpLib_Wire_AMQPWriterTest extends \PHPUnit_Framework_TestCase
 {
     protected $_writer;
 
     public function setUp()
     {
-        $this->_writer = new AMQPWriter();
+        $this->_writer = new PhpAmqpLib_Wire_AMQPWriter();
     }
 
     public function tearDown()

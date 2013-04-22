@@ -1,11 +1,12 @@
 <?php
 
-namespace PhpAmqpLib\Wire\IO;
+//namespace PhpAmqpLib\Wire\IO;
 
+/*
 use PhpAmqpLib\Exception\AMQPRuntimeException;
 use PhpAmqpLib\Exception\AMQPTimeoutException;
-
-class StreamIO extends AbstractIO
+*/
+class PhpAmqpLib_Wire_IO_StreamIO extends PhpAmqpLib_Wire_IO_AbstractIO
 {
     private $sock = null;
 

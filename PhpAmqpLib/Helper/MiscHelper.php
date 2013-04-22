@@ -1,8 +1,8 @@
 <?php
 
-namespace PhpAmqpLib\Helper;
+//namespace PhpAmqpLib\Helper;
 
-class MiscHelper
+class PhpAmqpLib_Helper_MiscHelper
 {
     public static function debug_msg($s)
     {

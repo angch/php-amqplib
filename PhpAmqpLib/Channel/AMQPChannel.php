@@ -1,12 +1,14 @@
 <?php
 
+/*
 namespace PhpAmqpLib\Channel;
 
 use PhpAmqpLib\Channel\AbstractChannel;
 use PhpAmqpLib\Exception\AMQPProtocolChannelException;
 use PhpAmqpLib\Helper\MiscHelper;
+*/
 
-class AMQPChannel extends AbstractChannel
+class AMQPChannel extends PhpAmqpLib_Channel_AbstractChannel
 {
     public $callbacks = array();
 
@@ -33,7 +35,7 @@ class AMQPChannel extends AbstractChannel
         parent::__construct($connection, $channel_id);
 
         if ($this->debug) {
-          MiscHelper::debug_msg("using channel_id: " . $channel_id);
+          PhpAmqpLib_Helper_MiscHelper::debug_msg("using channel_id: " . $channel_id);
         }
 
         $this->default_ticket = 0;
@@ -172,7 +174,7 @@ class AMQPChannel extends AbstractChannel
     {
         $this->is_open = true;
         if ($this->debug) {
-          MiscHelper::debug_msg("Channel open");
+          PhpAmqpLib_Helper_MiscHelper::debug_msg("Channel open");
         }
     }
 
@@ -704,7 +706,7 @@ class AMQPChannel extends AbstractChannel
                 $msg,
             ));
         } elseif ($this->debug) {
-            MiscHelper::debug_msg("Skipping unhandled basic_return message");
+            PhpAmqpLib_Helper_MiscHelper::debug_msg("Skipping unhandled basic_return message");
         }
     }
     public function tx_commit()

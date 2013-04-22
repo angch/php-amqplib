@@ -1,10 +1,10 @@
 <?php
 
-namespace PhpAmqpLib\Connection;
+//namespace PhpAmqpLib\Connection;
 
-use PhpAmqpLib\Wire\IO\SocketIO;
+//use PhpAmqpLib\Wire\IO\SocketIO;
 
-class AMQPSocketConnection extends AbstractConnection
+class AMQPSocketConnection extends PhpAmqpLib_Connection_AbstractConnection
 {
     public function __construct($host, $port,
                                 $user, $password,
@@ -14,7 +14,7 @@ class AMQPSocketConnection extends AbstractConnection
                                 $locale="en_US",
                                 $timeout = 3)
     {
-        $io = new SocketIO($host, $port, $timeout);
+        $io = new PhpAmqpLib_Wire_IO_SocketIO($host, $port, $timeout);
 
         parent::__construct($user, $password, $vhost, $insist, $login_method, $login_response, $locale, $io);
     }

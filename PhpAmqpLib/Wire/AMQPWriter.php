@@ -1,10 +1,11 @@
 <?php
 
+/*
 namespace PhpAmqpLib\Wire;
 
 use PhpAmqpLib\Exception\AMQPOutOfBoundsException;
-
-class AMQPWriter
+*/
+class PhpAmqpLib_Wire_AMQPWriter
 {
     public function __construct()
     {
@@ -15,7 +16,7 @@ class AMQPWriter
 
     private static function chrbytesplit($x, $bytes)
     {
-        return array_map('chr', AMQPWriter::bytesplit($x,$bytes));
+        return array_map('chr', PhpAmqpLib_Wire_AMQPWriter::bytesplit($x,$bytes));
     }
 
     /**
@@ -42,7 +43,7 @@ class AMQPWriter
         $res = array_reverse($res);
 
         if ($x!=0) {
-            throw new AMQPOutOfBoundsException("Value too big!");
+            throw new PhpAmqpLib_Exception_AMQPOutOfBoundsException("Value too big!");
         }
 
         return $res;
@@ -141,7 +142,7 @@ class AMQPWriter
     public function write_long($n)
     {
         $this->flushbits();
-        $this->out .= implode("", AMQPWriter::chrbytesplit($n,4));
+        $this->out .= implode("", PhpAmqpLib_Wire_AMQPWriter::chrbytesplit($n,4));
 
         return $this;
     }
@@ -162,7 +163,7 @@ class AMQPWriter
     public function write_longlong($n)
     {
         $this->flushbits();
-        $this->out .= implode("", AMQPWriter::chrbytesplit($n,8));
+        $this->out .= implode("", PhpAmqpLib_Wire_AMQPWriter::chrbytesplit($n,8));
 
         return $this;
     }
@@ -208,7 +209,7 @@ class AMQPWriter
     public function write_array($a)
     {
         $this->flushbits();
-        $data = new AMQPWriter();
+        $data = new PhpAmqpLib_Wire_AMQPWriter();
 
         foreach ($a as $v) {
             if (is_string($v)) {
@@ -217,7 +218,7 @@ class AMQPWriter
             } elseif (is_int($v)) {
                 $data->write('I');
                 $data->write_signed_long($v);
-            } elseif ($v instanceof AMQPDecimal) {
+            } elseif ($v instanceof PhpAmqpLib_Wire_AMQPDecimal) {
                 $data->write('D');
                 $data->write_octet($v->e);
                 $data->write_signed_long($v->n);
@@ -251,7 +252,7 @@ class AMQPWriter
     public function write_table($d)
     {
         $this->flushbits();
-        $table_data = new AMQPWriter();
+        $table_data = new PhpAmqpLib_Wire_AMQPWriter();
         foreach ($d as $k=>$va) {
             list($ftype,$v) = $va;
             $table_data->write_shortstr($k);
@@ -262,7 +263,7 @@ class AMQPWriter
                 $table_data->write('I');
                 $table_data->write_signed_long($v);
             } elseif ($ftype=='D') {
-                // 'D' type values are passed AMQPDecimal instances.
+                // 'D' type values are passed PhpAmqpLib_Wire_AMQPDecimal instances.
                 $table_data->write('D');
                 $table_data->write_octet($v->e);
                 $table_data->write_signed_long($v->n);

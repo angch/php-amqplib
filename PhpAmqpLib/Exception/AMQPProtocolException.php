@@ -1,12 +1,12 @@
 <?php
 
-namespace PhpAmqpLib\Exception;
+//namespace PhpAmqpLib\Exception;
 
 //TODO refactor usage of static methods
-use PhpAmqpLib\Channel\AbstractChannel;
-use PhpAmqpLib\Helper\MiscHelper;
+//use PhpAmqpLib\Channel\AbstractChannel;
+//use PhpAmqpLib\Helper\MiscHelper;
 
-class AMQPProtocolException extends \Exception implements AMQPExceptionInterface
+class AMQPProtocolException extends \Exception implements PhpAmqpLib_Exception_AMQPExceptionInterface
 {
     public function __construct($reply_code, $reply_text, $method_sig)
     {
@@ -16,9 +16,9 @@ class AMQPProtocolException extends \Exception implements AMQPExceptionInterface
         $this->amqp_reply_text = $reply_text; // redundant, but kept for BC
         $this->amqp_method_sig = $method_sig;
 
-        $ms = MiscHelper::methodSig($method_sig);
+        $ms = PhpAmqpLib_Helper_MiscHelper::methodSig($method_sig);
 
-        $PROTOCOL_CONSTANTS_CLASS = AbstractChannel::$PROTOCOL_CONSTANTS_CLASS;
+        $PROTOCOL_CONSTANTS_CLASS = PhpAmqpLib_Channel_AbstractChannel::$PROTOCOL_CONSTANTS_CLASS;
         $mn = isset($PROTOCOL_CONSTANTS_CLASS::$GLOBAL_METHOD_NAMES[$ms])
                 ? $PROTOCOL_CONSTANTS_CLASS::$GLOBAL_METHOD_NAMES[$ms]
                 : $mn = "";

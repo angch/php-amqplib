@@ -1,9 +1,10 @@
 <?php
 
-require_once __DIR__.'/../vendor/autoload.php';
+define('PHPAMQPLIB_PATH', __DIR__."/../PhpAmqpLib");
+require_once __DIR__.'/autoload.php';
 
-use PhpAmqpLib\Message\AMQPMessage;
-use PhpAmqpLib\Connection\AMQPConnection;
+//use PhpAmqpLib\Message\AMQPMessage;
+//use PhpAmqpLib\Connection\AMQPConnection;
 
 $connection = new AMQPConnection('localhost', 5672, 'guest', 'guest');
 $channel = $connection->channel();

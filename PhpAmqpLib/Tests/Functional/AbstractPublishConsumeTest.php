@@ -1,11 +1,11 @@
 <?php
 
-namespace PhpAmqpLib\Tests\Functional;
+//namespace PhpAmqpLib\Tests\Functional;
 
-use PhpAmqpLib\Connection\AMQPConnection;
-use PhpAmqpLib\Message\AMQPMessage;
+//use PhpAmqpLib\Connection\AMQPConnection;
+//use PhpAmqpLib\Message\AMQPMessage;
 
-abstract class AbstractPublishConsumeTest extends \PHPUnit_Framework_TestCase
+abstract class PhpAmqpLib_Tests_Functional_AbstractPublishConsumeTest extends \PHPUnit_Framework_TestCase
 {
     protected $exchange_name = 'test_exchange';
     protected $queue_name = null;

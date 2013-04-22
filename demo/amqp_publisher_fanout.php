@@ -1,9 +1,10 @@
 <?php
 
 include(__DIR__ . '/config.php');
+/*
 use PhpAmqpLib\Connection\AMQPConnection;
 use PhpAmqpLib\Message\AMQPMessage;
-
+*/
 $exchange = 'fanout_example_exchange';
 
 $conn = new AMQPConnection(HOST, PORT, USER, PASS, VHOST);
