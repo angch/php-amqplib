@@ -5,17 +5,21 @@ if (!defined('PHPAMQPLIB_PATH')) {
 }
 
 // Sorry.
-$_phpampqlib_mapping_exceptions =  array(
-    'AMQPChannel'          => PHPAMQPLIB_PATH.'/Channel/AMQPChannel.php',
-    'AMQPConnection'       => PHPAMQPLIB_PATH.'/Connection/AMQPConnection.php',
-    'AMQPStreamConnection' => PHPAMQPLIB_PATH.'/Connection/AMQPStreamConnection.php',
-    'AMQPRuntimeException' => PHPAMQPLIB_PATH.'/Exception/AMQPRuntimeException.php',
-    'AMQPTimeoutException' => PHPAMQPLIB_PATH.'/Exception/AMQPTimeoutException.php',
-    'AMQPMessage'          => PHPAMQPLIB_PATH.'/Message/AMQPMessage.php',
-    'AMQPSSLConnection'    => PHPAMQPLIB_PATH.'/Connection/AMQPSSLConnection.php',
+$_phpampqlib_mapping_exceptions = array(
+    'AMQPChannel'                     => PHPAMQPLIB_PATH.'/Channel/AMQPChannel.php',
+    'AMQPConnection'                  => PHPAMQPLIB_PATH.'/Connection/AMQPConnection.php',
+    'AMQPStreamConnection'            => PHPAMQPLIB_PATH.'/Connection/AMQPStreamConnection.php',
+    'AMQPSocketConnection'            => PHPAMQPLIB_PATH.'/Connection/AMQPSocketConnection.php',
+    'AMQPMessage'                     => PHPAMQPLIB_PATH.'/Message/AMQPMessage.php',
+    'AMQPSSLConnection'               => PHPAMQPLIB_PATH.'/Connection/AMQPSSLConnection.php',
+
+    'AMQPRuntimeException'            => PHPAMQPLIB_PATH.'/Exception/AMQPRuntimeException.php',
+    'AMQPTimeoutException'            => PHPAMQPLIB_PATH.'/Exception/AMQPTimeoutException.php',
+    'AMQPProtocolChannelException'    => PHPAMQPLIB_PATH.'/Exception/AMQPProtocolChannelException.php',
+    'AMQPProtocolException'           => PHPAMQPLIB_PATH.'/Exception/AMQPProtocolException.php',
+    'AMQPProtocolConnectionException' => PHPAMQPLIB_PATH.'/Exception/AMQPProtocolConnectionException.php',
 );
 
-//PHPAMQPLIB_PATH
 function phpamqplib_loader($class) {
     global $_phpampqlib_mapping_exceptions;
     //print "autoload $class\n";

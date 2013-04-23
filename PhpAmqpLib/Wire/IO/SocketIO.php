@@ -1,8 +1,8 @@
 <?php
 
-namespace PhpAmqpLib\Wire\IO;
+//namespace PhpAmqpLib\Wire\IO;
 
-class SocketIO extends AbstractIO
+class PhpAmqpLib_Wire_IO_SocketIO extends PhpAmqpLib_Wire_IO_AbstractIO
 {
     private $sock = null;
 

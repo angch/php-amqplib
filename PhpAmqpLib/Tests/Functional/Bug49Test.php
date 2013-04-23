@@ -1,12 +1,12 @@
 <?php
 
-namespace PhpAmqpLib\Tests\Functional;
+/*namespace PhpAmqpLib\Tests\Functional;
 
 use PhpAmqpLib\Connection\AMQPConnection;
 use PhpAmqpLib\Message\AMQPMessage;
-use PhpAmqpLib\Exception\AMQPProtocolException;
+use PhpAmqpLib\Exception\AMQPProtocolException;*/
 
-class Bug49Test extends \PHPUnit_Framework_TestCase
+class PhpAmqpLib_Tests_Functional_Bug49Test extends \PHPUnit_Framework_TestCase
 {
     protected $conn;
     protected $ch;

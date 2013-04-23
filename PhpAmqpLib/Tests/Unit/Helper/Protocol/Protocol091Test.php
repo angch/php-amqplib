@@ -1,14 +1,14 @@
 <?php
 
-namespace PhpAmqpLib\Tests\Unit\Helper\Writer;
+//namespace PhpAmqpLib\Tests\Unit\Helper\Writer;
 
-use PhpAmqpLib\Helper\Protocol\Protocol091;
+//use PhpAmqpLib\Helper\Protocol\Protocol091;
 
-class Protocol091Test extends \PHPUnit_Framework_TestCase
+class PhpAmqpLib_Helper_Protocol_Protocol091_Protocol091Test extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->protocol091 = new Protocol091();
+        $this->protocol091 = new PhpAmqpLib_Helper_Protocol_Protocol091();
     }
 
     public function testChannelClose()

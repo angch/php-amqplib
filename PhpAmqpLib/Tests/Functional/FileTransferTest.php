@@ -1,11 +1,11 @@
 <?php
 
-namespace PhpAmqpLib\Tests\Functional;
+//namespace PhpAmqpLib\Tests\Functional;
 
-use PhpAmqpLib\Connection\AMQPConnection;
-use PhpAmqpLib\Message\AMQPMessage;
+//use PhpAmqpLib\Connection\AMQPConnection;
+//use PhpAmqpLib\Message\AMQPMessage;
 
-class FileTransferTest extends \PHPUnit_Framework_TestCase
+class PhpAmqpLib_Tests_Functional_FileTransferTest extends \PHPUnit_Framework_TestCase
 {
     protected $exchange_name = 'test_exchange';
     protected $queue_name = null;

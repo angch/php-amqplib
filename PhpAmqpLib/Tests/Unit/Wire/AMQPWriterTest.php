@@ -1,8 +1,8 @@
 <?php
 
-namespace PhpAmqpLib\Tests\Unit;
+//namespace PhpAmqpLib\Tests\Unit;
 
-use PhpAmqpLib\Wire\AMQPWriter;
+//use PhpAmqpLib\Wire\AMQPWriter;
 
 class PhpAmqpLib_Wire_AMQPWriterTest extends \PHPUnit_Framework_TestCase
 {

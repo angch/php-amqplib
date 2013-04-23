@@ -1,11 +1,11 @@
 <?php
 
-namespace PhpAmqpLib\Tests\Unit;
+/*namespace PhpAmqpLib\Tests\Unit;
 
 use PhpAmqpLib\Wire\AMQPReader;
-use PhpAmqpLib\Wire\AMQPWriter;
+use PhpAmqpLib\Wire\AMQPWriter;*/
 
-class WireTest extends \PHPUnit_Framework_TestCase
+class PhpAmqpLib_Tests_Unit_WireTest extends \PHPUnit_Framework_TestCase
 {
     public function testBitWriteRead()
     {
