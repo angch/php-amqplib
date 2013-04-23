@@ -1,5 +1,7 @@
 # php-amqplib #
 
+This is a fork of the php-amqplib to make it usable under HipHop VM 2.01. See NOTE.NAMESPACELESS.md for details.
+
 [![Build Status](https://secure.travis-ci.org/videlalvaro/php-amqplib.png)](http://travis-ci.org/videlalvaro/php-amqplib)
 
 This library is a _pure PHP_ implementation of the AMQP protocol. It's been tested against [RabbitMQ](http://www.rabbitmq.com/).
